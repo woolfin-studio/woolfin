@@ -1,6 +1,6 @@
 # Woolfin Studio Landing Page
 
-## 文件结构
+## structure
 
 - `index.html`：homepage
 - `privacy.html`：privacy
