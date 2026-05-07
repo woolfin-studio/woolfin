@@ -341,21 +341,6 @@ p,
   bottom: 18%;
 }
 
-.subpage-shell::after {
-  content: "";
-  position: absolute;
-  right: 28px;
-  top: 110px;
-  width: 56px;
-  height: 56px;
-  background:
-    radial-gradient(circle at 50% 50%, #fff8 0 25%, transparent 26%),
-    linear-gradient(180deg, #ffe592, #ffc4d2);
-  border: 3px solid var(--border);
-  box-shadow: 6px 6px 0 #f3c0cf;
-  transform: rotate(8deg);
-}
-
 .single-page {
   min-height: calc(100vh - 120px);
   display: flex;
@@ -525,13 +510,6 @@ strong {
     right: 12px;
     top: -14px;
     width: 52px;
-  }
-
-  .subpage-shell::after {
-    right: 8px;
-    top: 124px;
-    width: 40px;
-    height: 40px;
   }
 
   .page-shell {
