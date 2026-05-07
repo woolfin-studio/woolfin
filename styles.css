@@ -13,6 +13,14 @@
   --highlight: #ffe36e;
 }
 
+@font-face {
+  font-family: "Thin Sans";
+  src: url("assets/fonts/Thin Sans.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,7 +32,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "ZCOOL KuaiLe", cursive;
+  font-family: "Thin Sans", "Trebuchet MS", sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, #ffffffaa 0 10%, transparent 11%),
@@ -88,11 +96,13 @@ a {
 .contact-title,
 .art-label,
 .back-link {
-  font-family: "Press Start 2P", cursive;
+  font-family: "Thin Sans", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .brand {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--accent-strong);
 }
 
@@ -130,6 +140,7 @@ h2 {
 
 h1 {
   font-size: clamp(2.1rem, 5vw, 3.8rem);
+  max-width: 10ch;
 }
 
 h2 {
@@ -187,57 +198,14 @@ h2 {
   overflow: hidden;
 }
 
-.pixel-cat {
+.cat-logo {
   position: absolute;
   left: 50%;
   bottom: 48px;
   transform: translateX(-50%);
-  width: 120px;
-  height: 88px;
-}
-
-.pixel-cat .ear {
-  position: absolute;
-  top: 0;
-  width: 26px;
-  height: 26px;
-  background: #fff7f2;
-  border: 4px solid var(--panel-edge);
-  transform: rotate(45deg);
-}
-
-.pixel-cat .ear.left {
-  left: 10px;
-}
-
-.pixel-cat .ear.right {
-  right: 10px;
-}
-
-.pixel-cat .face {
-  position: absolute;
-  inset: 18px 0 0;
-  background: #fff7f2;
-  border: 4px solid var(--panel-edge);
-  border-radius: 12px;
-}
-
-.pixel-cat .face::before,
-.pixel-cat .face::after {
-  content: "";
-  position: absolute;
-  top: 28px;
-  width: 8px;
-  height: 8px;
-  background: var(--panel-edge);
-}
-
-.pixel-cat .face::before {
-  left: 28px;
-}
-
-.pixel-cat .face::after {
-  right: 28px;
+  width: min(74%, 210px);
+  image-rendering: pixelated;
+  filter: drop-shadow(6px 6px 0 rgba(88, 71, 56, 0.18));
 }
 
 .pixel-heart {
@@ -301,16 +269,9 @@ h2 {
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 22px;
   margin-top: 26px;
-}
-
-.info-card ul {
-  margin: 0;
-  padding-left: 22px;
-  line-height: 1.9;
-  font-size: 1.05rem;
 }
 
 .contact-panel {
