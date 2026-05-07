@@ -215,6 +215,7 @@ p,
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 48px 0 72px;
 }
 
 .home-logo {
@@ -226,6 +227,35 @@ p,
   box-shadow: 12px 12px 0 var(--shadow);
   image-rendering: pixelated;
   filter: drop-shadow(0 20px 30px rgba(88, 71, 56, 0.12));
+}
+
+.dessert-float {
+  position: absolute;
+  image-rendering: pixelated;
+  filter: drop-shadow(6px 8px 0 rgba(108, 85, 73, 0.18));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dessert-cheesecake {
+  left: 12%;
+  top: 16%;
+  width: min(12vw, 92px);
+  transform: rotate(-10deg);
+}
+
+.dessert-fruitcake {
+  right: 10%;
+  top: 18%;
+  width: min(13vw, 98px);
+  transform: rotate(8deg);
+}
+
+.dessert-pancakes {
+  right: 18%;
+  bottom: 12%;
+  width: min(14vw, 110px);
+  transform: rotate(-6deg);
 }
 
 .home-main::before,
@@ -290,6 +320,15 @@ p,
   pointer-events: none;
 }
 
+.content-dessert {
+  position: absolute;
+  right: 30px;
+  top: -26px;
+  width: 86px;
+  image-rendering: pixelated;
+  filter: drop-shadow(5px 7px 0 rgba(108, 85, 73, 0.14));
+}
+
 .contact-list {
   margin-top: 28px;
 }
@@ -344,8 +383,20 @@ strong {
     padding-top: 56px;
   }
 
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    min-width: 104px;
+    min-height: 48px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
   h1 {
     font-size: clamp(1.8rem, 8vw, 2.8rem);
+    max-width: none;
   }
 
   .home-logo {
@@ -353,8 +404,32 @@ strong {
     padding: 18px;
   }
 
+  .dessert-cheesecake {
+    left: 2%;
+    top: 10%;
+    width: min(20vw, 78px);
+  }
+
+  .dessert-fruitcake {
+    right: 2%;
+    top: 14%;
+    width: min(22vw, 82px);
+  }
+
+  .dessert-pancakes {
+    right: 10%;
+    bottom: 6%;
+    width: min(24vw, 92px);
+  }
+
   .single-content {
     padding: 24px 22px 28px;
+  }
+
+  .content-dessert {
+    right: 18px;
+    top: -18px;
+    width: 64px;
   }
 
   .subpage-shell::after {
@@ -379,6 +454,10 @@ strong {
   .home-logo:hover {
     transform: translate(-3px, -3px);
   }
+
+  .dessert-float {
+    animation: bob 3.2s steps(10, end) infinite;
+  }
 }
 
 @keyframes rise-in {
@@ -390,5 +469,16 @@ strong {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(2deg);
   }
 }
