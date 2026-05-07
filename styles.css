@@ -224,70 +224,164 @@ p,
   padding: 28px 0 72px;
 }
 
-.home-poster {
+.home-cover {
   position: relative;
-  width: min(860px, 100%);
-  min-height: min(72vh, 680px);
+  width: min(760px, 100%);
+  min-height: min(74vh, 720px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px 32px 48px;
-}
-
-.poster-glow {
-  position: absolute;
-  inset: 14% 18% 18%;
-  background:
-    radial-gradient(circle at center, #fff9c8 0 22%, #ffe3f0 22% 48%, transparent 48%);
-  opacity: 0.9;
-  filter: blur(8px);
-}
-
-.home-poster::before {
-  content: "";
-  position: absolute;
-  inset: 10% 12% 12%;
-  border: 3px solid #fff8fb;
+  padding: 54px 34px 42px 68px;
+  background: linear-gradient(180deg, #fff8ee 0 72%, #ffe8f1 72% 100%);
+  border: 4px solid var(--border);
   box-shadow:
-    0 0 0 3px var(--border),
-    0 0 0 8px #f8cad8;
-  background:
-    linear-gradient(180deg, #fff7f1 0 64%, #ffe6ef 64% 100%);
+    0 0 0 6px #fffafc,
+    14px 14px 0 var(--shadow);
+  overflow: visible;
 }
 
-.home-poster::after {
+.home-cover::before {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: 9%;
-  width: min(56vw, 460px);
-  height: 18px;
-  transform: translateX(-50%);
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #ffe894 0 18px,
-      #ffd27d 18px 36px,
-      #ffc7d7 36px 54px,
-      #ffe894 54px 72px
-    );
+  left: 20px;
+  top: 18px;
+  bottom: 18px;
+  width: 18px;
+  background: repeating-linear-gradient(
+    180deg,
+    #ffdca6 0 14px,
+    #ffc9da 14px 28px
+  );
   border: 3px solid var(--border);
-  box-shadow: 0 6px 0 #d39bb0;
+  box-shadow: 5px 0 0 #f1b9cb;
+}
+
+.home-cover::after {
+  position: absolute;
+  content: "";
+  inset: 16px;
+  border: 2px dashed #efb8c8;
+  pointer-events: none;
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 2;
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-kicker {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 8px 12px 6px;
+  color: var(--accent-strong);
+  background: #fffef8;
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 #efd0da;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cover-title {
+  max-width: none;
+  margin: 18px 0 10px;
+  font-size: clamp(1.9rem, 5.3vw, 3rem);
+}
+
+.cover-note {
+  max-width: 32ch;
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.cover-sticker {
+  position: absolute;
+  right: 34px;
+  top: 28px;
+  z-index: 3;
+  padding: 10px 12px 8px;
+  background: #ffe57f;
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 #d8b56d;
+  transform: rotate(6deg);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cover-tabs {
+  position: absolute;
+  right: -4px;
+  top: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 3;
+}
+
+.cover-tab {
+  min-width: 116px;
+  padding: 10px 12px 8px;
+  border: 3px solid var(--border);
+  border-left: none;
+  box-shadow: 4px 4px 0 rgba(215, 160, 177, 0.8);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tab-about {
+  background: #ffe698;
+}
+
+.tab-contact {
+  background: #c9f1d8;
+}
+
+.tab-privacy {
+  background: #ffd7e4;
+}
+
+.cover-ring {
+  position: absolute;
+  left: 8px;
+  z-index: 3;
+  width: 42px;
+  height: 18px;
+  background: #fff9fe;
+  border: 3px solid var(--border);
+  border-radius: 999px;
+}
+
+.cover-ring-a {
+  top: 112px;
+}
+
+.cover-ring-b {
+  top: 252px;
+}
+
+.cover-ring-c {
+  top: 392px;
 }
 
 .home-logo {
   position: relative;
   z-index: 2;
-  width: min(52vw, 380px);
-  padding: 18px;
+  width: min(42vw, 290px);
+  padding: 16px;
   background:
     linear-gradient(180deg, #fffaf2 0 58%, #ffe7ef 58% 100%);
   border: 4px solid var(--border);
   box-shadow:
     0 0 0 4px #fff7fb,
-    10px 10px 0 var(--shadow);
+    8px 8px 0 var(--shadow);
   image-rendering: pixelated;
-  filter: drop-shadow(0 20px 30px rgba(88, 71, 56, 0.12));
+  filter: drop-shadow(0 16px 24px rgba(88, 71, 56, 0.1));
 }
 
 .dessert-float {
@@ -299,24 +393,24 @@ p,
 }
 
 .dessert-cheesecake {
-  left: 17%;
-  top: 24%;
-  width: min(9vw, 70px);
-  transform: rotate(-12deg);
+  left: 84px;
+  bottom: 72px;
+  width: min(8vw, 62px);
+  transform: rotate(-10deg);
 }
 
 .dessert-fruitcake {
-  right: 18%;
-  top: 22%;
-  width: min(10vw, 76px);
-  transform: rotate(10deg);
+  right: 96px;
+  bottom: 124px;
+  width: min(8vw, 64px);
+  transform: rotate(9deg);
 }
 
 .dessert-pancakes {
-  left: 56%;
-  bottom: 18%;
-  width: min(10vw, 80px);
-  transform: rotate(-4deg);
+  right: 138px;
+  top: 92px;
+  width: min(8vw, 62px);
+  transform: rotate(-5deg);
 }
 
 .home-main::before,
@@ -332,13 +426,13 @@ p,
 }
 
 .home-main::before {
-  left: 11%;
-  top: 20%;
+  left: 6%;
+  top: 18%;
 }
 
 .home-main::after {
-  right: 12%;
-  bottom: 18%;
+  right: 8%;
+  bottom: 14%;
 }
 
 .single-page {
@@ -432,23 +526,55 @@ strong {
     padding-top: 40px;
   }
 
-  .home-poster {
+  .home-cover {
     min-height: auto;
-    padding: 22px 0 30px;
+    padding: 34px 18px 32px 44px;
   }
 
-  .poster-glow {
-    inset: 16% 8% 24%;
+  .home-cover::before {
+    left: 10px;
+    top: 12px;
+    bottom: 12px;
+    width: 14px;
+    box-shadow: 3px 0 0 #f1b9cb;
   }
 
-  .home-poster::before {
-    inset: 12% 0 16%;
+  .cover-tabs {
+    right: -3px;
+    top: auto;
+    bottom: 82px;
+    gap: 8px;
   }
 
-  .home-poster::after {
-    bottom: 12%;
-    width: min(78vw, 320px);
+  .cover-tab {
+    min-width: 88px;
+    padding: 8px 8px 6px;
+    font-size: 0.62rem;
+  }
+
+  .cover-sticker {
+    right: 16px;
+    top: 18px;
+    padding: 8px 10px 6px;
+    font-size: 0.58rem;
+  }
+
+  .cover-ring {
+    left: 2px;
+    width: 30px;
     height: 14px;
+  }
+
+  .cover-ring-a {
+    top: 88px;
+  }
+
+  .cover-ring-b {
+    top: 198px;
+  }
+
+  .cover-ring-c {
+    top: 308px;
   }
 
   .nav-links {
@@ -480,26 +606,34 @@ strong {
   }
 
   .home-logo {
-    width: min(70vw, 290px);
-    padding: 12px;
+    width: min(62vw, 230px);
+    padding: 10px;
   }
 
   .dessert-cheesecake {
-    left: 3%;
-    top: 18%;
-    width: min(15vw, 46px);
+    left: 28px;
+    bottom: 54px;
+    width: min(12vw, 38px);
   }
 
   .dessert-fruitcake {
-    right: 3%;
-    top: 20%;
-    width: min(15vw, 46px);
+    right: 34px;
+    bottom: 94px;
+    width: min(12vw, 40px);
   }
 
   .dessert-pancakes {
-    left: 58%;
-    bottom: 18%;
-    width: min(16vw, 50px);
+    right: 58px;
+    top: 76px;
+    width: min(12vw, 40px);
+  }
+
+  .cover-title {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .cover-note {
+    max-width: 26ch;
   }
 
   .single-content {
@@ -518,13 +652,13 @@ strong {
   }
 
   .home-main::before {
-    left: 2%;
-    top: 24%;
+    left: 0;
+    top: 18%;
   }
 
   .home-main::after {
-    right: 2%;
-    bottom: 16%;
+    right: 0;
+    bottom: 12%;
   }
 }
 
