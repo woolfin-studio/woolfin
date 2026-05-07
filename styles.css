@@ -17,8 +17,8 @@
 }
 
 @font-face {
-  font-family: "Thin Sans";
-  src: url("assets/fonts/Thin Sans.ttf") format("truetype");
+  font-family: "Ark Pixel";
+  src: url("assets/fonts/ark-pixel-12px-monospaced-latin.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -35,12 +35,12 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Thin Sans", "Trebuchet MS", sans-serif;
+  font-family: "Ark Pixel", monospace;
   color: var(--text);
   background:
     radial-gradient(circle at top left, #ffffffaa 0 10%, transparent 11%),
     radial-gradient(circle at 85% 8%, #fff8 0 6%, transparent 6.2%),
-    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+    linear-gradient(180deg, var(--bg-top) 0 58%, var(--bg-bottom) 100%);
   image-rendering: pixelated;
 }
 
@@ -64,9 +64,9 @@ a {
 
 .page-shell {
   position: relative;
-  width: min(1120px, calc(100% - 32px));
+  width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 24px 0 40px;
+  padding: 28px 0 44px;
 }
 
 .page-shell::before {
@@ -92,26 +92,26 @@ a {
 .eyebrow,
 .section-tag,
 .art-label {
-  font-family: "Thin Sans", "Trebuchet MS", sans-serif;
-  letter-spacing: 0.14em;
+  font-family: "Ark Pixel", monospace;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .brand {
   position: relative;
   display: inline-block;
-  padding: 12px 16px 10px;
-  font-size: 1.05rem;
+  padding: 12px 14px 10px;
+  font-size: 0.92rem;
   color: var(--accent-strong);
   background: var(--panel);
-  border: 4px solid var(--border);
-  box-shadow: 6px 6px 0 var(--shadow);
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--shadow);
 }
 
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 14px;
 }
 
 .nav-links a,
@@ -123,34 +123,38 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 124px;
-  min-height: 54px;
-  padding: 10px 18px;
+  min-width: 112px;
+  min-height: 48px;
+  padding: 10px 16px 8px;
   background: var(--panel);
-  border: 4px solid var(--border);
-  box-shadow: 6px 6px 0 var(--shadow);
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 var(--shadow);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: transform 0.16s steps(2, end), background-color 0.16s steps(2, end);
+  transition:
+    transform 0.16s steps(2, end),
+    background-color 0.16s steps(2, end),
+    box-shadow 0.16s steps(2, end);
 }
 
 .nav-links a:hover,
 .nav-links a[aria-current="page"] {
   background: var(--highlight);
   transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 #d39bb0;
 }
 
 .eyebrow,
 .section-tag {
   display: inline-block;
-  margin-bottom: 10px;
-  padding: 8px 12px 6px;
-  font-size: 0.72rem;
+  margin-bottom: 12px;
+  padding: 7px 10px 5px;
+  font-size: 0.68rem;
   color: var(--accent-strong);
-  line-height: 1.8;
+  line-height: 1.6;
   background: #fff8fb;
-  border: 3px solid var(--border);
+  border: 2px solid var(--border);
   box-shadow: 4px 4px 0 #f3c0cf;
 }
 
@@ -161,19 +165,21 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  max-width: 12ch;
+  font-size: clamp(1.9rem, 5vw, 3.55rem);
+  max-width: 13ch;
   text-wrap: balance;
+  line-height: 1.25;
 }
 
 h2 {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  line-height: 1.5;
 }
 
 p,
 .prose-panel p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 0.9rem;
+  line-height: 1.95;
 }
 
 .single-content h2 {
@@ -200,8 +206,8 @@ p,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding-top: 12px;
+  gap: 18px;
+  padding-top: 10px;
 }
 
 .home-nav,
@@ -215,16 +221,18 @@ p,
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 48px 0 72px;
+  padding: 36px 0 72px;
 }
 
 .home-logo {
-  width: min(72vw, 540px);
-  padding: 28px;
+  width: min(68vw, 500px);
+  padding: 22px;
   background:
-    linear-gradient(180deg, #fffaf2 0 62%, #ffe7ef 62% 100%);
-  border: 6px solid var(--border);
-  box-shadow: 12px 12px 0 var(--shadow);
+    linear-gradient(180deg, #fffaf2 0 58%, #ffe7ef 58% 100%);
+  border: 4px solid var(--border);
+  box-shadow:
+    0 0 0 4px #fff7fb,
+    10px 10px 0 var(--shadow);
   image-rendering: pixelated;
   filter: drop-shadow(0 20px 30px rgba(88, 71, 56, 0.12));
 }
@@ -232,29 +240,29 @@ p,
 .dessert-float {
   position: absolute;
   image-rendering: pixelated;
-  filter: drop-shadow(6px 8px 0 rgba(108, 85, 73, 0.18));
+  filter: drop-shadow(5px 6px 0 rgba(108, 85, 73, 0.16));
   z-index: 2;
   pointer-events: none;
 }
 
 .dessert-cheesecake {
-  left: 12%;
-  top: 16%;
-  width: min(12vw, 92px);
+  left: 14%;
+  top: 18%;
+  width: min(10vw, 76px);
   transform: rotate(-10deg);
 }
 
 .dessert-fruitcake {
-  right: 10%;
-  top: 18%;
-  width: min(13vw, 98px);
+  right: 12%;
+  top: 17%;
+  width: min(11vw, 82px);
   transform: rotate(8deg);
 }
 
 .dessert-pancakes {
-  right: 18%;
-  bottom: 12%;
-  width: min(14vw, 110px);
+  right: 20%;
+  bottom: 14%;
+  width: min(12vw, 92px);
   transform: rotate(-6deg);
 }
 
@@ -262,11 +270,11 @@ p,
 .home-main::after {
   content: "";
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   background: #fff6fb;
-  border: 4px solid var(--border);
-  box-shadow: 6px 6px 0 #f3c0cf;
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 #f3c0cf;
 }
 
 .home-main::before {
@@ -284,13 +292,13 @@ p,
   position: absolute;
   right: 28px;
   top: 110px;
-  width: 70px;
-  height: 70px;
+  width: 56px;
+  height: 56px;
   background:
     radial-gradient(circle at 50% 50%, #fff8 0 25%, transparent 26%),
     linear-gradient(180deg, #ffe592, #ffc4d2);
-  border: 4px solid var(--border);
-  box-shadow: 8px 8px 0 #f3c0cf;
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0 #f3c0cf;
   transform: rotate(8deg);
 }
 
@@ -299,17 +307,19 @@ p,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 0 80px;
+  padding: 40px 0 72px;
 }
 
 .single-content {
   width: min(720px, 100%);
   position: relative;
-  padding: 34px 34px 38px;
+  padding: 30px 30px 34px;
   background:
     linear-gradient(180deg, var(--panel) 0 70%, var(--panel-2) 70% 100%);
-  border: 6px solid var(--border);
-  box-shadow: 12px 12px 0 var(--shadow);
+  border: 4px solid var(--border);
+  box-shadow:
+    0 0 0 4px #fff8fb,
+    10px 10px 0 var(--shadow);
 }
 
 .single-content::before {
@@ -322,11 +332,11 @@ p,
 
 .content-dessert {
   position: absolute;
-  right: 30px;
-  top: -26px;
-  width: 86px;
+  right: 24px;
+  top: -22px;
+  width: 72px;
   image-rendering: pixelated;
-  filter: drop-shadow(5px 7px 0 rgba(108, 85, 73, 0.14));
+  filter: drop-shadow(4px 5px 0 rgba(108, 85, 73, 0.14));
 }
 
 .contact-list {
@@ -335,10 +345,10 @@ p,
 
 .contact-list p {
   margin: 0 0 18px;
-  padding: 14px 16px;
+  padding: 12px 14px 10px;
   background: #fffdf9;
-  border: 4px solid var(--border);
-  box-shadow: 6px 6px 0 #e6c6d0;
+  border: 3px solid var(--border);
+  box-shadow: 5px 5px 0 #e6c6d0;
 }
 
 .contact-list strong {
@@ -346,7 +356,7 @@ p,
   margin-bottom: 4px;
   color: var(--accent-strong);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
 .policy-note {
@@ -374,69 +384,86 @@ strong {
   .home-header,
   .minimal-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .home-main,
   .single-page {
     min-height: auto;
-    padding-top: 56px;
+    padding-top: 40px;
   }
 
   .nav-links {
-    gap: 12px;
+    width: 100%;
+    gap: 10px;
   }
 
   .nav-links a {
-    min-width: 104px;
-    min-height: 48px;
-    padding: 8px 14px;
-    font-size: 0.82rem;
+    flex: 1 1 calc(33.333% - 8px);
+    min-width: 0;
+    min-height: 46px;
+    padding: 8px 10px 6px;
+    font-size: 0.72rem;
   }
 
   h1 {
-    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    font-size: clamp(1.45rem, 7vw, 2.35rem);
     max-width: none;
   }
 
+  h2 {
+    font-size: clamp(1rem, 4.6vw, 1.28rem);
+  }
+
+  p,
+  .prose-panel p {
+    font-size: 0.8rem;
+    line-height: 1.9;
+  }
+
   .home-logo {
-    width: min(86vw, 420px);
-    padding: 18px;
+    width: min(88vw, 380px);
+    padding: 14px;
   }
 
   .dessert-cheesecake {
     left: 2%;
-    top: 10%;
-    width: min(20vw, 78px);
+    top: 9%;
+    width: min(18vw, 58px);
   }
 
   .dessert-fruitcake {
     right: 2%;
-    top: 14%;
-    width: min(22vw, 82px);
+    top: 13%;
+    width: min(18vw, 60px);
   }
 
   .dessert-pancakes {
-    right: 10%;
-    bottom: 6%;
-    width: min(24vw, 92px);
+    right: 8%;
+    bottom: 10%;
+    width: min(20vw, 66px);
   }
 
   .single-content {
-    padding: 24px 22px 28px;
+    padding: 22px 18px 24px;
   }
 
   .content-dessert {
-    right: 18px;
-    top: -18px;
-    width: 64px;
+    right: 12px;
+    top: -14px;
+    width: 52px;
   }
 
   .subpage-shell::after {
     right: 8px;
     top: 124px;
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .page-shell {
+    width: min(1120px, calc(100% - 24px));
+    padding-top: 18px;
   }
 }
 
